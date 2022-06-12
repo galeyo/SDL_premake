@@ -8,7 +8,7 @@ project "SDL2"
 
 	systemversion "latest"
 
-	vectorextesions "SSE"
+	vectorextensions "SSE"
 
 	targetdir("bin/" .. outputDir .. "/%{prj.name}")
 	objdir("bin-int/" .. outputDir .. "/%{prj.name}")
