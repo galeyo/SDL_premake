@@ -6,6 +6,11 @@ project "SDL2"
 	language "C++"
 	cppdialect "C++17"
 
+	flags {
+		"NoRuntimeChecks", -- Only used on Visual Studio.
+		"NoBufferSecurityCheck"
+	}
+
 	systemversion "latest"
 
 	vectorextensions "SSE"
@@ -349,14 +354,6 @@ project "SDL2"
 			"_DEBUG"
 		}
 
-		buildoptions {
-			"/Z7",
-			"/Ob1",
-			"/ZI",
-			"/Od",
-			"/GS-",
-			"/W3"
-		}
 
 		linkoptions {
 			"/DEBUG",
@@ -370,18 +367,9 @@ project "SDL2"
 		defines {
 			"NDEBUG"
 		}
-		buildoptions {
-			"/Zi",
-			"/Ob1",
-			"/ZI",
-			"/GS-",
-			"/W3"
-		}
 		linkoptions {
 			"/DEBUG",
 			"/NODEFAULTLIB",
-			"/OPT:ICF",
-			"/OPT:REF"
 		}
 		runtime "Release"
 		optimize "On"
